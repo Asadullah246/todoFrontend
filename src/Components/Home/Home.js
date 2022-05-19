@@ -13,7 +13,7 @@ const Home = () => {
     const email = user?.email
     const [refetch, setRefetch] = useState(false)
     useEffect(() => {
-        axios.get(`http://localhost:5000/userData/${email}`)
+        axios.get(`https://agile-atoll-35564.herokuapp.com/userData/${email}`)
             .then(res => setData(res.data))
             .catch(err => console.log(err))
     }, [email, refetch])
@@ -31,7 +31,7 @@ const Home = () => {
 
         }
      
-        axios.post(`http://localhost:5000/user`, userData)
+        axios.post(`https://agile-atoll-35564.herokuapp.com/user`, userData)
             .then(res => {
               
                 setSuccess(res.data)
@@ -47,7 +47,7 @@ const Home = () => {
 
     }
     const handleDelete = async (id) => {
-        axios.delete(`http://localhost:5000/delete/${id}`)
+        axios.delete(`https://agile-atoll-35564.herokuapp.com/delete/${id}`)
             .then(res => {
                 setData(data.filter(data => data._id !== id))
             })
@@ -63,20 +63,20 @@ const Home = () => {
         <div className='w-1/2 mx-auto'>
             <h1 className='text-3xl text-primary my-20 font-bold'>YOUR BEST TO DO APP</h1>
             <form onSubmit={addData}>
-                <div class="mb-6">
-                    <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Name</label>
-                    <input type="text" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 name" placeholder="Enter name" required />
+                <div className="mb-6">
+                    <label for="name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Name</label>
+                    <input type="text" id="name" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 name" placeholder="Enter name" required />
                 </div>
-                <div class="mb-6">
-                    <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Description</label>
-                    <textarea id="description" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 description" required />
+                <div className="mb-6">
+                    <label for="description" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Description</label>
+                    <textarea id="description" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 description" required />
                 </div>
                 {error?<p className='text-red-500'>{error.message}</p>: ""}
                 {success ? <p className='text-green-500'>{success.message}</p>: ""}
 
-                <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-1 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+                <button type="submit" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-1 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
             </form>
-            <button onClick={complete} class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-16 py-3 my-4 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Complete</button>
+            <button onClick={complete} className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-16 py-3 my-4 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Complete</button>
 
             <div>
                 <table className='table-auto mx-auto mt-20 w-11/12 '>

@@ -37,7 +37,7 @@ const Login = () => {
     let from = location.state?.from?.pathname || "/";
     useEffect( ()=>{
         if (user) { 
-            axios.post('http://localhost:5000/login', {
+            axios.post('https://agile-atoll-35564.herokuapp.com/login', {
                 email: user.email  
             })
                 .then(function (response) {
@@ -100,16 +100,16 @@ const Login = () => {
             {
                 state && <form onSubmit={signup}>
                 <div>
-                    <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">email</label>
-                    <input type="email" id="email" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name="email" required/>
+                    <label for="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">email</label>
+                    <input type="email" id="email" className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name="email" required/>
                 </div>
                 <div>
-                    <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">password</label>
-                    <input type="password" id="password" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name="password" required/>
+                    <label for="password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">password</label>
+                    <input type="password" id="password" className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name="password" required/>
                 </div>
                 <div>
-                    <label for="confirm-password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">confirm-password</label>
-                    <input type="password" id="confirm-password" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required/>
+                    <label for="confirm-password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">confirm-password</label>
+                    <input type="password" id="confirm-password" className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required/>
                 </div>
                 {error && <p>{error}</p>}
                 {success && <p>{success}</p>}
@@ -120,12 +120,12 @@ const Login = () => {
             {
                 state? "": <form onSubmit={handleLogin}>
                 <div>
-                    <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">email</label>
-                    <input type="email" id="email" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name="email" required />
+                    <label for="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">email</label>
+                    <input type="email" id="email" className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name="email" required />
                 </div>
                 <div>
-                    <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">password</label>
-                    <input type="password" id="password" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name="password" required/>
+                    <label for="password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">password</label>
+                    <input type="password" id="password" className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name="password" required/>
                 </div>
                 
                 {error && <p>{error}</p>}
